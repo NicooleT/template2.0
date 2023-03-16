@@ -54,7 +54,7 @@
             <mj-text>{{{this.content}}}</mj-text>
             <mj-text>
               <mj-raw>
-                {{{this.pubDate.format("YYYY-MM-DD") }}}
+                {{{this.pubDate}}}
               </mj-raw>  
             </mj-text>
             <mj-divider></mj-divider>
