@@ -1,7 +1,7 @@
 <mjml>
   <mj-head>
     <mj-attributes>
-      <mj-all font-size="16px" color="dimgray" font-family="Helvetica" align="left" />
+      <mj-all font-size="16px" color="#0c0d0f" font-family="Helvetica" align="left" />
       <mj-body background-color="#ffffff"></mj-body>
       <mj-section padding="10px 10px 0"></mj-section>
       <mj-text padding="5px 15px" line-height="22px"></mj-text>
@@ -31,32 +31,26 @@
     <!-- Intro -->
     <mj-section>
       <mj-column>
-        <mj-text padding-top="20px" padding-bottom="20px">{{{intro}}}</mj-text>
+        <mj-text padding-top="20px" padding-bottom="20px" align="center" >{{{intro}}}</mj-text>
       </mj-column>
     </mj-section>
 
     {{#each feeds}}
       <!-- Feed Divider -->
-      <mj-section>
-        <mj-column>
-            <mj-text>This is the template from your GITHUB</mj-text>
-        </mj-column>
-      </mj-section>
-
       {{#each items}}
         <!-- Entry -->
         <mj-section>
           <mj-column>
+            <a href="{{this.link}}">
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
             <mj-text>
-              <a href="{{this.link}}">{{this.title}}</a>
+              <h4>{{this.title}}</h4>
             </mj-text>
             <mj-text>{{{this.content}}}</mj-text>
             <mj-text>
-              <mj-raw>
-                {{{this.pubDate}}}
-              </mj-raw>  
+                {{{this.pubDate}}} 
             </mj-text>
+            </a>
             <mj-divider></mj-divider>
           </mj-column>
         </mj-section>
