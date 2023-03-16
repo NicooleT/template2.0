@@ -43,12 +43,14 @@
 
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
-            <mj-text>
-              <h4 href="{{this.link}}">{{this.title}}</h4>
+            <mj-text href="{{this.link}}" color="#0c0d0f" font-weight="800">
+              <a>{{this.title}}</a>
             </mj-text>
-            <mj-text href="{{this.link}}">{{{this.content}}}</mj-text>
-            <mj-text href="{{this.link}}">
-                {{{this.pubDate}}} 
+            <mj-text href="{{this.link}}" color="#0c0d0f">
+              <a> {{{this.content}}} </a>
+            </mj-text>
+            <mj-text href="{{this.link}}" color="#0c0d0f">
+              <a>  {{{this.pubDate}}} </a>
             </mj-text>
             <mj-divider></mj-divider>
           </mj-column>
