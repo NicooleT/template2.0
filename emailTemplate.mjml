@@ -40,19 +40,19 @@
       {{#each items}}
         <!-- Entry -->
         <mj-section>
-          <mj-button href="{{this.link}}">
+
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
             <mj-text>
-              <h4>{{this.title}}</h4>
+              <h4 href="{{this.link}}">{{this.title}}</h4>
             </mj-text>
-            <mj-text>{{{this.content}}}</mj-text>
-            <mj-text>
+            <mj-text href="{{this.link}}">{{{this.content}}}</mj-text>
+            <mj-text href="{{this.link}}">
                 {{{this.pubDate}}} 
             </mj-text>
             <mj-divider></mj-divider>
           </mj-column>
-          </mj-button>
+
         </mj-section>
       {{/each}}
 
