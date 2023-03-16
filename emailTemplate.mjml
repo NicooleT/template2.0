@@ -57,7 +57,7 @@
       {{/each}}
     {{/each}}
     
-    {{#each feeds}}
+    {{#each latestfeeds}}
       <!-- Feed Divider -->
       {{#each items}}
         <!-- Entry -->
