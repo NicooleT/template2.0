@@ -47,7 +47,7 @@
         <!-- Entry -->
         <mj-section>
           <mj-column>
-          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure}}" alt="{{header.title}}"></mj-image>
+          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
             <mj-text>
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
