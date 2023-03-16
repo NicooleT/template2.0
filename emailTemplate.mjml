@@ -10,11 +10,6 @@
     <mj-style inline="inline">
       a {
         color: {{accentColor}};
-        text-decoration: underline;
-      }
-    </mj-style>
-    <mj-style>
-      .text-deco{
         text-decoration: none !important;
       }
     </mj-style>
@@ -48,13 +43,13 @@
 
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
-            <mj-text css-class="text-deco" color="#0c0d0f" font-weight="800">
+            <mj-text color="#0c0d0f" font-weight="800">
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
-            <mj-text css-class="text-deco" color="#0c0d0f">
+            <mj-text color="#0c0d0f">
               <a href="{{this.link}}"> {{{this.content}}} </a>
             </mj-text>
-            <mj-text css-class="text-deco" color="#0c0d0f">
+            <mj-text color="#0c0d0f">
               <a href="{{this.link}}">  {{{this.pubDate}}} </a>
             </mj-text>
             <mj-divider></mj-divider>
