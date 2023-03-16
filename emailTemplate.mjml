@@ -52,7 +52,11 @@
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
             <mj-text>{{{this.content}}}</mj-text>
-            <mj-text>{{{this.pubDate.format("YYYY-MM-DD") }}}</mj-text>
+            <mj-text>
+              <mj-raw>
+                {{{this.pubDate.format("YYYY-MM-DD") }}}
+              </mj-raw>  
+            </mj-text>
             <mj-divider></mj-divider>
           </mj-column>
         </mj-section>
