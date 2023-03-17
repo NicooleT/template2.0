@@ -46,7 +46,12 @@
     </mj-section>
 
     {{#each feeds}}
-    <mj-text css-class="section-title">TOP STORY</mj-text>
+    <mj-section>
+      <mj-column> 
+        <mj-text css-class="section-title">TOP STORY</mj-text>
+      </mj-column>
+    </mj-section>
+            
       <!-- Feed Divider -->
       {{#each items}}
         <!-- Entry -->
