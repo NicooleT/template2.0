@@ -12,15 +12,16 @@
         color: {{accentColor}};
         text-decoration: none !important;
       }
-    </mj-style>
-    <mj-style>
       .section-title div{
-      color: #ffff !important;
-      text-decoration: none !important;
-      background-color: #ff5924 !important;
-      width: 100% !important;
-      padding:5px !important;
-      font-weight: 800 !important;
+        color: #ffff !important;
+        text-decoration: none !important;
+        background-color: #ff5924 !important;
+        width: 100% !important;
+        padding:5px !important;
+        font-weight: 800 !important;
+      }
+      .feed-item-img{
+        width: 100% !important;
       }
     </mj-style>
   </mj-head>
@@ -57,7 +58,7 @@
         <!-- Entry -->
         <mj-section>
           <mj-column>     
-          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}" width="100%"></mj-image>
+          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}" css-class="feed-item-img"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
@@ -92,7 +93,25 @@
     <!-- Outro -->
     <mj-section>
       <mj-column>
-        <mj-text align="center" padding-bottom="20px">{{{outro}}}</mj-text>
+        <mj-text align="center" padding-bottom="20px" font-weight="800">{{{outro}}}</mj-text>
+        <mj-social font-size="15px" icon-size="30px" mode="horizontal">
+          <mj-social-element name="facebook" src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5MC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MzAzNDU4Nn0.-rPM9y3Om841gM9AnHKVrW_0K9gAgS_6dWF1WCPvj68/image.png" background-color="transparent" href="https://www.facebook.com/MTLBlog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+          </mj-social-element>
+          <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5Mi9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY2OTcyNzA0NX0.pcfi4YDWGhkjuaMDy3y8ZHH6XDn58FPc07jKjbFf5xg/image.png" name="twitter" background-color="transparent" href="https://twitter.com/mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+          </mj-social-element>
+          <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5My9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MTY0NDA3NH0.svQrWFMJ_teEHLz_Ch46pNZ63yeehYR2EP09MOr_Hvo/image.png" name="instagram" background-color="transparent" href="https://www.instagram.com/mtlblog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+          </mj-social-element>
+          <mj-social-element src="https://assets.rbl.ms/27271237/origin.png" name="youtube" background-color="transparent" href="https://www.youtube.com/user/MTLBlogOfficial?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+            
+          </mj-social-element>
+          <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5NC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTYzMDQxMTE3M30.jFTSO6mOirB6Pb140SP8oRcVGaMc6CuEmU_dOOwkWao/image.png" name="tiktok" background-color="transparent" href="https://www.tiktok.com/@mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">            
+          </mj-social-element>
+        </mj-social>
+        
+        
+        Copyright © 2022 Narcity Media Inc.
+        
+        You subscribed to this newsletter because you signed up for our "Hot Headlines" Daily Digest email on our website or social media.
       </mj-column>
     </mj-section>
   </mj-body>
