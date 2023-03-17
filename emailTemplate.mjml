@@ -41,7 +41,7 @@
     <!-- Intro -->
     <mj-section>
       <mj-column>
-        <mj-text padding-top="20px" padding-bottom="8px" align="center" >{{{intro}}}</mj-text>
+        <mj-text padding-bottom="8px" align="center" >{{{intro}}}</mj-text>
       </mj-column>
     </mj-section>
 
