@@ -28,7 +28,7 @@
     <mj-section>
       <mj-column>
         {{#if header.banner}}
-        <mj-image href="{{header.link}}" align="center" padding="0px 20px" src="{{header.banner}}" alt="{{header.title}}"></mj-image>
+        <mj-image href="{{header.link}}" align="center" padding="0px 20px" width="400px" src="{{header.banner}}" alt="{{header.title}}"></mj-image>
         {{else}}
         <mj-text color="{{accentColor}}" padding="30px 0 40px" align="center" font-size="24px">
           <a href="{{header.link}}">{{header.title}}</a>
@@ -49,7 +49,7 @@
       {{#each items}}
         <!-- Entry -->
         <mj-section>
-          <mj-test css-class="section-title">TOP STORY</mj-text>
+          <mj-text css-class="section-title">TOP STORY</mj-text>
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
