@@ -17,10 +17,10 @@
       .section-title div{
       color: #ffff !important;
       text-decoration: none !important;
-      background-color: #ff5924;
-      width: 100%;
-      padding:5px;
-      font-weight: 800;
+      background-color: #ff5924 !important;
+      width: 100% !important;
+      padding:5px !important;
+      font-weight: 800 !important;
       }
     </mj-style>
   </mj-head>
