@@ -72,13 +72,13 @@
     {{/each}}
     
     {{#each latestfeeds}}
-      <!-- Feed Divider -->
-      {{#each items}}
     <mj-section>
       <mj-column> 
         <mj-text css-class="section-title">LATEST STORY</mj-text>
       </mj-column>
     </mj-section>
+      <!-- Feed Divider -->
+      {{#each items}}
         <!-- Entry -->
         <mj-section>
           <mj-column>     
