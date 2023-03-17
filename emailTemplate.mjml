@@ -14,12 +14,13 @@
       }
     </mj-style>
     <mj-style>
-      .section-title {
+      .section-title div{
       color: #ffff !important;
       text-decoration: none !important;
       background-color: #ff5924;
       width: 100%;
       padding:5px;
+      font-weight: 800;
       }
     </mj-style>
   </mj-head>
@@ -45,11 +46,11 @@
     </mj-section>
 
     {{#each feeds}}
+    <mj-text css-class="section-title">TOP STORY</mj-text>
       <!-- Feed Divider -->
       {{#each items}}
         <!-- Entry -->
         <mj-section>
-          <mj-text css-class="section-title">TOP STORY</mj-text>
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
