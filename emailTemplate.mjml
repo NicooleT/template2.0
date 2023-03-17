@@ -13,13 +13,22 @@
         text-decoration: none !important;
       }
     </mj-style>
+    <mj-style>
+      .section-title {
+      color: #ffff !important;
+      text-decoration: none !important;
+      background-color: #ff5924;
+      width: 100%;
+      padding:5px;
+      }
+    </mj-style>
   </mj-head>
   <mj-body>
     <!-- Header -->
     <mj-section>
       <mj-column>
         {{#if header.banner}}
-        <mj-image href="{{header.link}}" align="center" src="{{header.banner}}" alt="{{header.title}}"></mj-image>
+        <mj-image href="{{header.link}}" align="center" padding="0px 20px" src="{{header.banner}}" alt="{{header.title}}"></mj-image>
         {{else}}
         <mj-text color="{{accentColor}}" padding="30px 0 40px" align="center" font-size="24px">
           <a href="{{header.link}}">{{header.title}}</a>
@@ -31,7 +40,7 @@
     <!-- Intro -->
     <mj-section>
       <mj-column>
-        <mj-text padding-top="20px" padding-bottom="20px" align="center" >{{{intro}}}</mj-text>
+        <mj-text padding-top="20px" padding-bottom="8px" align="center" >{{{intro}}}</mj-text>
       </mj-column>
     </mj-section>
 
@@ -40,6 +49,7 @@
       {{#each items}}
         <!-- Entry -->
         <mj-section>
+          <mj-test css-class="section-title">TOP STORY</mj-text>
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
@@ -47,9 +57,6 @@
             </mj-text>
             <mj-text color="#0c0d0f">
               <a href="{{this.link}}"> {{{this.content}}} </a>
-            </mj-text>
-            <mj-text color="#0c0d0f">
-              <a href="{{this.link}}">  {{{this.pubDate}}} </a>
             </mj-text>
             <mj-divider></mj-divider>
           </mj-column>
@@ -69,9 +76,6 @@
             </mj-text>
             <mj-text color="#0c0d0f">
               <a href="{{this.link}}"> {{{this.content}}} </a>
-            </mj-text>
-            <mj-text color="#0c0d0f">
-              <a href="{{this.link}}">  {{{this.pubDate}}} </a>
             </mj-text>
             <mj-divider></mj-divider>
           </mj-column>
