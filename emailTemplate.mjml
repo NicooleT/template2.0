@@ -93,7 +93,7 @@
     <!-- Outro -->
     <mj-section>
       <mj-column align="center" >
-        <mj-text padding-bottom="20px" font-weight="800">{{{outro}}}</mj-text>
+        <mj-text padding-bottom="20px" font-weight="800" align="center">{{{outro}}}</mj-text>
         <mj-social padding-bottom="20px" font-size="15px" icon-size="30px" align="center"  mode="horizontal">
           <mj-social-element name="facebook" src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5MC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MzAzNDU4Nn0.-rPM9y3Om841gM9AnHKVrW_0K9gAgS_6dWF1WCPvj68/image.png" background-color="transparent" href="https://www.facebook.com/MTLBlog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
           </mj-social-element>
@@ -106,10 +106,9 @@
           <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5NC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTYzMDQxMTE3M30.jFTSO6mOirB6Pb140SP8oRcVGaMc6CuEmU_dOOwkWao/image.png" name="tiktok" background-color="transparent" href="https://www.tiktok.com/@mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">            
           </mj-social-element>
         </mj-social>
-        <mj-text padding-bottom="10px" font-weight="600">Copyright © 2022 Narcity Media Inc.</mj-text>
-        <mj-text padding-bottom="20px">You subscribed to this newsletter because you signed up for our "Hot Headlines" Daily Digest email on our website or social media.</mj-text>
-              
-        
+        <mj-text padding-bottom="10px" font-weight="600" align="center" color="#e6e6e6">Copyright © 2022 Narcity Media Inc.</mj-text>
+        <mj-text padding-bottom="20px" align="center" font-size="15px" color="#e6e6e6">You subscribed to this newsletter because you signed up for our "Hot Headlines" Daily Digest email on our website or social media.</mj-text>
+
       </mj-column>
     </mj-section>
   </mj-body>
