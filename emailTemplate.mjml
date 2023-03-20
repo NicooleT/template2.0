@@ -71,18 +71,26 @@
       {{/each}}
     {{/each}}
     
-    {{#each latestfeeds}}
     <mj-section>
       <mj-column> 
-        <mj-text css-class="section-title">LATEST STORY</mj-text>
+        <mj-text css-class="section-title">YOUR DAILY REWARD</mj-text>
       </mj-column>
     </mj-section>
-      <!-- Feed Divider -->
-      {{#each items}}
-        <!-- Entry -->
+    <!-- Entry -->
         <mj-section>
           <mj-column>     
-          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}"></mj-image>
+            <mj-text color="#0c0d0f">
+              
+            </mj-text>
+          </mj-column>
+         </mj-section>
+    
+    <mj-section>
+      <mj-column>
+        <mj-raw>
+          <!-- Show content if variable "latestRssFeedUrl" is true -->
+          {% if latestRssFeedUrl %}
+            <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}" css-class="feed-item-img"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
@@ -90,10 +98,10 @@
               <a href="{{this.link}}"> {{{this.content}}} </a>
             </mj-text>
             <mj-divider></mj-divider>
-          </mj-column>
-        </mj-section>
-      {{/each}}
-    {{/each}}
+          {% endif %}
+        </mj-raw>
+      </mj-column>
+    </mj-section>
 
     <!-- Outro -->
     <mj-section>
