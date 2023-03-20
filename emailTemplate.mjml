@@ -70,38 +70,6 @@
         </mj-section>
       {{/each}}
     {{/each}}
-    
-    <mj-section>
-      <mj-column> 
-        <mj-text css-class="section-title">YOUR DAILY REWARD</mj-text>
-      </mj-column>
-    </mj-section>
-    <!-- Entry -->
-        <mj-section>
-          <mj-column>     
-            <mj-text color="#0c0d0f">
-              
-            </mj-text>
-          </mj-column>
-         </mj-section>
-    
-    <mj-section>
-      <mj-column>
-        <mj-raw>
-          <!-- Show content if variable "latestRssFeedUrl" is true -->
-          {% if latestRssFeedUrl %}
-            <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}" css-class="feed-item-img"></mj-image>
-            <mj-text color="#0c0d0f" font-weight="800">
-              <a href="{{this.link}}">{{this.title}}</a>
-            </mj-text>
-            <mj-text color="#0c0d0f">
-              <a href="{{this.link}}"> {{{this.content}}} </a>
-            </mj-text>
-            <mj-divider></mj-divider>
-          {% endif %}
-        </mj-raw>
-      </mj-column>
-    </mj-section>
 
     <!-- Outro -->
     <mj-section>
