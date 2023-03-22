@@ -58,7 +58,7 @@
         <!-- Entry -->
         <mj-section>
           <mj-column>     
-          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.url}}" alt="{{header.title}}" css-class="feed-item-img"></mj-image>
+          <mj-image href="{{this.link}}" align="center" src="{{this.enclosure}}" alt="{{header.title}}" css-class="feed-item-img"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
               <a href="{{this.link}}">{{this.title}}</a>
             </mj-text>
