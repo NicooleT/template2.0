@@ -23,9 +23,18 @@
       .feed-item-img{
         width: 100% !important;
       }
+      
+      .body{
+        counter-reset:section;
+      }
+      
+      h2::before {
+        counter-increment: section;
+        content: "Section " counter(section) ": ";
+      }
     </mj-style>
   </mj-head>
-  <mj-body>
+  <mj-body css-class="body">
     <!-- Header -->
     <mj-section>
       <mj-column>
@@ -60,7 +69,7 @@
           <mj-column>     
           <mj-image href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" css-class="feed-item-img"></mj-image>
             <mj-text color="#0c0d0f" font-weight="800">
-              <a href="{{this.link}}">{{this.title}}</a>
+              <h3><a href="{{this.link}}">{{this.title}}</a></h3>
             </mj-text>
             <mj-text color="#0c0d0f">
               <a href="{{this.link}}"> {{{this.content}}} </a>
