@@ -20,7 +20,7 @@
         padding:5px !important;
         font-weight: 800 !important;
       }
-      .feed-item-img{
+      .feed-item-img img{
         width: 600px !important;
       }
       
@@ -71,7 +71,7 @@
               <ol>
                 {{#each items}}
                 <li>
-                  <img href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" css-class="feed-item-img" />
+                  <img href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" class="feed-item-img" />
                   <a href="{{this.link}}"><h3>{{this.title}}</h3></a>
                   <a href="{{this.link}}"> {{{this.content}}} </a>
                 </li>
