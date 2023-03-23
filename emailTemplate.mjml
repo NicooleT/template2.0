@@ -68,8 +68,8 @@
         <mj-section>
           <mj-column>  
             <mj-raw color="#0c0d0f">
+              {{#each items}}
               <ol>
-                {{#each items}}
                 <li>
                   <img href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" class="feed-item-img" />
                   <a href="{{this.link}}"><h3>{{this.title}}</h3></a>
