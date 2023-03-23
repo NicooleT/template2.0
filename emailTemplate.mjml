@@ -70,7 +70,7 @@
             <mj-raw color="#0c0d0f">
               <ol>
                 <li>
-                  <img href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" class="feed-item-img" />
+                  <img href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" width="600px" />
                   <a href="{{this.link}}"><h3>{{this.title}}</h3></a>
                   <a href="{{this.link}}"> {{{this.content}}} </a>
                 </li>
