@@ -1,37 +1,29 @@
 <mjml>
   <mj-head>
     <mj-attributes>
-      <mj-all font-size="16px" color="#0c0d0f" font-family="Helvetica" align="left" />
+      <mj-all color="#0c0d0f" font-family="Helvetica" align="left" />
       <mj-body background-color="#ffffff"></mj-body>
-      <mj-section padding="10px 10px 0"></mj-section>
-      <mj-text padding="5px 15px" line-height="22px"></mj-text>
-      <mj-divider padding="10px 15px" border-width="1px" border-style="dashed" border-color="lightgrey"></mj-divider>
+      <mj-section padding="0px"></mj-section>
+      <mj-column padding="0px"></mj-column>
+      <mj-text color="#0C0D0F" padding="0px"></mj-text>
+      <mj-divider
+        padding="10px 15px"
+        border-width="1px"
+        border-style="dashed"
+        border-color="lightgrey"
+      ></mj-divider>
     </mj-attributes>
     <mj-style inline="inline">
-      a {
-        color: {{accentColor}};
-        text-decoration: none !important;
-      }
-      .section-title div{
-        color: #ffff !important;
-        text-decoration: none !important;
-        background-color: #ff5924 !important;
-        width: 100% !important;
-        padding:5px !important;
-        font-weight: 800 !important;
-      }
-      .feed-item-img img{
-        width: 600px !important;
-      }
-      
-      .body{
-        counter-reset:section;
-      }
-      
-      .body h3::before {
-        counter-increment: section;
-        content: "Section " counter(section) ": ";
-      }
+      a { color: #0C0D0F !important; text-decoration: none !important; }
+      p{margin:0px; line-height: 1.3;} .section-title div{ color: #ffff
+      !important; text-decoration: none !important; background-color: #ff5924
+      !important; width: 100% !important; padding:5px !important; font-weight:
+      800 !important; } .counter div{ font-size: 100px!important; font-weight:
+      900!important; text-align: center !important; line-height: 0.75
+      !important; } .title div{ font-size:16px !important; padding:10px 0px
+      !important; line-height:22px!important; font-weight: 600 !important; }
+      @media screen and (max-width: 430px) { .counter div{ font-size: 80px
+      !important; } .title div{ font-size:17px !important; } }
     </mj-style>
   </mj-head>
   <mj-body css-class="body">
@@ -39,9 +31,16 @@
     <mj-section>
       <mj-column>
         {{#if header.banner}}
-        <mj-image href="{{header.link}}" align="center" padding="0px 20px" width="400px" src="{{header.banner}}" alt="{{header.title}}"></mj-image>
+        <mj-image
+          href="{{header.link}}"
+          align="center"
+          padding="0px 20px"
+          width="400px"
+          src="{{header.banner}}"
+          alt="{{header.title}}"
+        ></mj-image>
         {{else}}
-        <mj-text color="{{accentColor}}" padding="30px 0 40px" align="center" font-size="24px">
+        <mj-text padding="30px 0 40px" align="center" font-size="24px">
           <a href="{{header.link}}">{{header.title}}</a>
         </mj-text>
         {{/if}}
@@ -51,57 +50,236 @@
     <!-- Intro -->
     <mj-section>
       <mj-column>
-        <mj-text padding-bottom="8px" align="center" >{{{intro}}}</mj-text>
+        <mj-text padding="15px 0px" line-height="40px" align="center"
+          >{{{intro}}}</mj-text>
       </mj-column>
     </mj-section>
 
     {{#each feeds}}
     <mj-section>
-      <mj-column> 
-        <mj-text css-class="section-title">TOP STORY</mj-text>
+      <mj-column>
+        <mj-text css-class="section-title">TODAY'S TRENDING STORY</mj-text>
       </mj-column>
     </mj-section>
-            
-      <!-- Feed Divider -->
-       {{#each items}}
-        <!-- Entry -->
-        <mj-section>
-          <mj-column>  
-            <mj-raw color="#0c0d0f">
-              <ol>
-                <li>
-                  <img href="{{this.link}}" align="center" src="{{this.enclosure.src}}" alt="{{header.title}}" width="600px" />
-                  <a href="{{this.link}}"><h3>{{{this.title}}}</h3></a>
-                  <a href="{{this.link}}"> {{{this.content}}} </a>
-                </li>
-              </ol>
-            </mj-raw>
-            <mj-divider></mj-divider>
-          </mj-column>
-        </mj-section>
-      {{/each}}
-    {{/each}}
+
+    <!-- Feed Divider -->
+    {{#each items}}
+    <!-- Entry -->
+     <mj-section css-class="item-identifier">
+      <mj-column>
+        <mj-image
+          href="{{this.link}}"
+          align="center"
+          src="{{this.enclosure.src}}"
+          alt="{{header.title}}"
+        />
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-group>
+        <mj-column
+          css-class="counter-column"
+          padding="10px 0px 10px 10px"
+          width="25%"
+        >
+          <mj-text css-class="counter">{{inc @index}}</mj-text>
+        </mj-column>
+        <mj-column
+          css-class="title-column"
+          padding="0px 20px 0px 10px"
+          width="75%"
+        >
+          <mj-text css-class="title">
+            <a href="{{this.link}}" color="#393939">{{{this.title}}}</a>
+          </mj-text>
+          <mj-text font-size="16px" padding="0px 0px">
+            <a href="{{this.link}}" color="#393939"> {{{this.content}}} </a>
+          </mj-text>
+        </mj-column>
+      </mj-group>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-divider></mj-divider>
+      </mj-column>
+    </mj-section>
     
+      {{#ifEquals @index 0}}
+<!-- goloot section -->
+     <mj-section>
+      <mj-column >
+        <mj-text css-class="section-title">
+          CLAIM YOUR DAILY REWARD
+        </mj-text>
+        </mj-column >
+      </mj-section>
+      
+    <mj-section>
+      <mj-column >
+        <mj-raw>
+          <table style="margin: auto">
+            <tbody>
+              <tr>
+                <td>
+                  <img
+                    usemap="#map"
+                    style="width: 288px !important; height: 367px !important"
+                    alt="Promotion Banner"
+                    src="https://golnk.cc/img?z=8KzmdUK9Rjkv1QrsrhX5&l=en&e={{{../../email}}}&d={{{../../rssFeedDate}}}"
+                    border="0"
+                  /><map name="map"
+                    ><area
+                      shape="rect"
+                      coords="0,0,288,272"
+                      alt="Reward"
+                      href="https://golnk.cc/click?z=8KzmdUK9Rjkv1QrsrhX5&l=en&e={{{../../email}}}&d={{{../../rssFeedDate}}}" /><area
+                      shape="rect"
+                      coords="0,272,288,367"
+                      alt="Privacy Policy"
+                      href="https://golnk.cc/privacy?z=8KzmdUK9Rjkv1QrsrhX5&l=en&e={{{../../email}}}&d={{{../../rssFeedDate}}}"
+                  /></map>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </mj-raw>
+      </mj-column>
+    </mj-section>
+         {{/ifEquals}}
+
+<!--TRENDING STORIES CON'T -->
+{{#restOfItems @index 1}}
+<mj-section>
+      <mj-column >
+        <mj-text css-class="section-title">
+          MORE TRENDING STORY
+        </mj-text>
+        </mj-column >
+      </mj-section>
+
+<mj-section css-class="item-identifier">
+      <mj-group>
+        <mj-column
+          css-class="counter-column"
+          padding="10px 0px 10px 10px"
+          width="25%"
+        >
+          <mj-image
+          href="{{this.link}}"
+          align="center"
+          src="{{this.enclosure.src}}"
+          alt="{{header.title}}"
+          />
+        </mj-column>
+        <mj-column
+          css-class="title-column"
+          padding="0px 20px 0px 10px"
+          width="75%"
+        >
+          <mj-text css-class="title">
+            <a href="{{this.link}}" color="#393939">{{{this.title}}}</a>
+          </mj-text>
+          
+        </mj-column>
+      </mj-group>
+</mj-section>
+{{/restOfItems}}
+
+      
+ {{/each}} {{/each}}
+
+<!-- buy sell ads at the end-->
+    <mj-section>
+      <mj-column >
+        <mj-raw>
+          <p align="center">
+            <a
+              href="https://email.buysellads.net/?k=CEAIPK7M&c={{campaignId}}{{audienceId}}"
+            >
+              <img
+                src="https://email.buysellads.net/?k=CEAIPK7M&i={{campaignId}}{{audienceId}}"
+                style="
+                  display: block;
+                  height: auto;
+                  width: 100%;
+                  max-width: 100%;
+                "
+              />
+            </a>
+          </p>
+        </mj-raw>
+      </mj-column>
+    </mj-section>
+
     <!-- Outro -->
     <mj-section>
-      <mj-column align="center" >
-        <mj-text padding-bottom="20px" font-weight="800" align="center">{{{outro}}}</mj-text>
-        <mj-social padding-bottom="20px" font-size="15px" icon-size="30px" align="center"  mode="horizontal">
-          <mj-social-element name="facebook" src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5MC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MzAzNDU4Nn0.-rPM9y3Om841gM9AnHKVrW_0K9gAgS_6dWF1WCPvj68/image.png" background-color="transparent" href="https://www.facebook.com/MTLBlog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+      <mj-column align="center">
+        <mj-text padding-bottom="20px" font-weight="800" align="center"
+          >{{{outro}}}</mj-text
+        >
+        <mj-social
+          padding-bottom="20px"
+          font-size="15px"
+          icon-size="30px"
+          align="center"
+          mode="horizontal"
+        >
+          <mj-social-element
+            name="facebook"
+            src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5MC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MzAzNDU4Nn0.-rPM9y3Om841gM9AnHKVrW_0K9gAgS_6dWF1WCPvj68/image.png"
+            background-color="transparent"
+            href="https://www.facebook.com/MTLBlog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn"
+          >
           </mj-social-element>
-          <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5Mi9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY2OTcyNzA0NX0.pcfi4YDWGhkjuaMDy3y8ZHH6XDn58FPc07jKjbFf5xg/image.png" name="twitter" background-color="transparent" href="https://twitter.com/mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+          <mj-social-element
+            src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5Mi9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY2OTcyNzA0NX0.pcfi4YDWGhkjuaMDy3y8ZHH6XDn58FPc07jKjbFf5xg/image.png"
+            name="twitter"
+            background-color="transparent"
+            href="https://twitter.com/mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn"
+          >
           </mj-social-element>
-          <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5My9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MTY0NDA3NH0.svQrWFMJ_teEHLz_Ch46pNZ63yeehYR2EP09MOr_Hvo/image.png" name="instagram" background-color="transparent" href="https://www.instagram.com/mtlblog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+          <mj-social-element
+            src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5My9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTY0MTY0NDA3NH0.svQrWFMJ_teEHLz_Ch46pNZ63yeehYR2EP09MOr_Hvo/image.png"
+            name="instagram"
+            background-color="transparent"
+            href="https://www.instagram.com/mtlblog/?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn"
+          >
           </mj-social-element>
-          <mj-social-element src="https://assets.rbl.ms/27271237/origin.png" name="youtube" background-color="transparent" href="https://www.youtube.com/user/MTLBlogOfficial?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">
+          <mj-social-element
+            src="https://assets.rbl.ms/27271237/origin.png"
+            name="youtube"
+            background-color="transparent"
+            href="https://www.youtube.com/user/MTLBlogOfficial?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn"
+          >
           </mj-social-element>
-          <mj-social-element src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5NC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTYzMDQxMTE3M30.jFTSO6mOirB6Pb140SP8oRcVGaMc6CuEmU_dOOwkWao/image.png" name="tiktok" background-color="transparent" href="https://www.tiktok.com/@mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn">            
+          <mj-social-element
+            src="https://www.narcity.com/media-library/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yNzIwMzg5NC9vcmlnaW4ucG5nIiwiZXhwaXJlc19hdCI6MTYzMDQxMTE3M30.jFTSO6mOirB6Pb140SP8oRcVGaMc6CuEmU_dOOwkWao/image.png"
+            name="tiktok"
+            background-color="transparent"
+            href="https://www.tiktok.com/@mtlblog?utm_source=newsletter&utm_medium=email&utm_campaign=dailydigest&utm_content=socialbtn"
+          >
           </mj-social-element>
         </mj-social>
-        <mj-text padding-bottom="10px" font-weight="600" align="center" font-size="12px" color="#969696">Copyright © 2022 Narcity Media Inc.</mj-text>
-        <mj-text padding-bottom="20px" align="center" font-size="12px" color="#969696">You subscribed to this newsletter because you signed up for our "Hot Headlines" Daily Digest email on our website or social media.</mj-text>
-
+        <mj-text
+          padding-bottom="10px"
+          font-weight="600"
+          align="center"
+          font-size="12px"
+          color="#969696"
+          >Copyright © 2022 Narcity Media Inc.</mj-text
+        >
+        <mj-text
+          padding-bottom="20px"
+          align="center"
+          font-size="12px"
+          color="#969696"
+          >You subscribed to this newsletter because you signed up for our "Hot
+          Headlines" Daily Digest email on our website or social media.</mj-text
+        >
       </mj-column>
     </mj-section>
   </mj-body>
 </mjml>
+
